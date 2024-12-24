@@ -13,9 +13,10 @@
     <dependencies>
         <dependency>
             <groupId>net.risesoft</groupId>
-            <artifactId>risenet-y9boot-common-util</artifactId>
+            <artifactId>risenet-y9boot-support-file-jpa-repository</artifactId>
             <version>v9.6.7</version>
         </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

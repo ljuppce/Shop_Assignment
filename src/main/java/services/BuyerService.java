@@ -22,10 +22,10 @@ public class BuyerService {
         return buyerRepository.findById(id).orElse(null);
     }
 
-    @Transactional
+/*    @Transactional
     public Buyer saveBuyer(Buyer buyer) {
         return buyerRepository.save(buyer);
-    }
+    }*/
 
     public void deleteBuyer(Long id) {
         buyerRepository.deleteById(id);

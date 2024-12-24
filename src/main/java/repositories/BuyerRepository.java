@@ -9,4 +9,6 @@ public interface BuyerRepository extends JpaRepository<Buyer, Long> {
     List<Buyer> findByBuyerId(Long buyerId);
 
     List<Buyer> findByName(String name);
+
+   // void save(Buyer existingBuyer);
 }
