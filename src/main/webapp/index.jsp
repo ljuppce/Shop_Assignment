@@ -5,7 +5,7 @@
     <title>Shop MVC - Početna stranica</title>
 </head>
 <body>
-    <h1>Dobrodošli u Shop MVC aplikaciju!</h1>
+    <h1>MVC shop</h1>
 
     <div>
         <a href="<spring:url value='/buyers' />">Kupci</a>
