@@ -1,17 +1,17 @@
-package services;
+package org.zemljoradnik.mvcshop.services;
 
-import models.Product;
+import org.zemljoradnik.mvcshop.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repositories.ProductRepository;
+import org.zemljoradnik.mvcshop.repositories.ProductRepository;
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 import java.util.List;
 
 @Service
 public class ProductService {
 
-    @Autowired
+    @Autowired(required = false)
     private ProductRepository productRepository;
 
     public List<Product> getAllProducts() {

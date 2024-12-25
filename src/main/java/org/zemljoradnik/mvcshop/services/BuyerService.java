@@ -1,17 +1,16 @@
-package services;
+package org.zemljoradnik.mvcshop.services;
 
-import models.Buyer;
+import org.zemljoradnik.mvcshop.models.Buyer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repositories.BuyerRepository;
+import org.zemljoradnik.mvcshop.repositories.BuyerRepository;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 public class BuyerService {
 
-    @Autowired
+    @Autowired(required = true)
     private BuyerRepository buyerRepository;
 
     public List<Buyer> getAllBuyers() {

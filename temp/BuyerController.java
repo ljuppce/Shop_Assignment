@@ -1,17 +1,17 @@
-package controllers;
+package org.zemljoradnik.mvcshop.controllers;
 
-import models.Buyer;
+import org.zemljoradnik.mvcshop.models.Buyer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import repositories.BuyerRepository;
+import org.zemljoradnik.mvcshop.repositories.BuyerRepository;
 
 @Controller
 @RequestMapping("/buyers")
 public class BuyerController {
 
-    @Autowired
+    @Autowired(required = false)
     private BuyerRepository buyerRepository;
 
     // Prikazivanje svih kupaca

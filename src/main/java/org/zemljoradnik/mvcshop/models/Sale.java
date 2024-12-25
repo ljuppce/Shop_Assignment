@@ -1,6 +1,6 @@
-package models;
+package org.zemljoradnik.mvcshop.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 public class Sale {

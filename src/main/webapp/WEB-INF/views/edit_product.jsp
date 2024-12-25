@@ -7,7 +7,7 @@
 <body>
     <h2>Izmeni proizvod</h2>
 
-    <form action="${pageContext.request.contextPath}/products/update/${product.id}" method="post">
+    <form action="${pageContext.request.contextPath}/products/update" method="post">
         <div>
             <label for="name">Naziv:</label>
             <input type="text" name="name" value="${product.name}" required />
@@ -19,6 +19,10 @@
         <div>
             <label for="quantity">Količina:</label>
             <input type="number" name="quantity" value="${product.quantity}" required />
+
+        </div>
+        <div>
+             <input type = "hidden" name="id" value = "${product.id}" />
         </div>
         <div>
             <button type="submit">Spremi izmene</button>

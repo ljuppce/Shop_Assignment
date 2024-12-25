@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
 <body>
     <h2>Izmeni prodaju</h2>
 
-    <form action="${pageContext.request.contextPath}/sales/update/${sale.id}" method="post">
+    <form action="${pageContext.request.contextPath}/sales/update" method="post">
         <div>
             <label for="product">Proizvod:</label>
             <select name="product.id">
@@ -25,8 +26,8 @@
             </select>
         </div>
         <div>
-            <label for="saleDate">Datum prodaje:</label>
-            <input type="date" name="saleDate" value="${sale.saleDate}" required />
+            <label for="quantity">Kolicina:</label>
+            <input type="number" name="quantity" value="${sale.quantity}" required />
         </div>
         <div>
             <button type="submit">Spremi izmene</button>

@@ -1,5 +1,5 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ page contentType="text/html; language="java" %>
+<%@ page contentType="text/html; language=java" %>
 <!DOC TYPE html>
 <html>
 <head>

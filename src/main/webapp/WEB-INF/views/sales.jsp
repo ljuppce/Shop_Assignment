@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +18,8 @@
                 <th>ID</th>
                 <th>Proizvod</th>
                 <th>Kupac</th>
-                <th>Datum prodaje</th>
+                <th>Kolicina</th>
+
                 <th>Akcije</th>
             </tr>
         </thead>
@@ -27,7 +29,8 @@
                     <td>${sale.id}</td>
                     <td>${sale.product.name}</td>
                     <td>${sale.buyer.name}</td>
-                    <td>${sale.saleDate}</td>
+                    <td>${sale.quantity}</td>
+
                     <td>
                         <a href="${pageContext.request.contextPath}/sales/edit/${sale.id}">Izmeni</a> |
                         <form action="${pageContext.request.contextPath}/sales/delete/${sale.id}" method="post" style="display:inline;">

@@ -1,17 +1,19 @@
-package services;
+package org.zemljoradnik.mvcshop.services;
 
-import models.Sale;
+import org.zemljoradnik.mvcshop.models.Sale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repositories.SaleRepository;
+import org.zemljoradnik.mvcshop.repositories.SaleRepository;
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class SaleService {
 
-    @Autowired
+    @Autowired(required = false)
     private SaleRepository saleRepository;
 
     public List<Sale> getAllSales() {
@@ -32,6 +34,7 @@ public class SaleService {
     }
 
     public List<Sale> findSalesByBuyerId(Long buyerId) {
-        return saleRepository.findByBuyerId(buyerId);
+        return new ArrayList<>();
+        //return saleRepository.findByBuyerId(buyerId);
     }
 }
