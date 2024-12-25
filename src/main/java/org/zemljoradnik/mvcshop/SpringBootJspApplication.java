@@ -17,3 +17,4 @@ public class SpringBootJspApplication extends SpringBootServletInitializer {
         SpringApplication.run(SpringBootJspApplication.class);
     }
 }
+//generisano

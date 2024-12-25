@@ -60,6 +60,7 @@ public class ProductController {
         return "redirect:/products";
     }
 /*
+ovo moze brisanje
     // Ažuriranje podataka o proizvodu
     @PostMapping("/update/{id}")
     public String updateProduct(@PathVariable Long id, @ModelAttribute Product updatedProduct) {

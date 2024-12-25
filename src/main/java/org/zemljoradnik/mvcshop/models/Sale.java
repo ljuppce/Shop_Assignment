@@ -54,5 +54,6 @@ public class Sale {
 
     public void setSaleDate(Object saleDate) {
     }
+    //proveriti za konstruktor
 }
 

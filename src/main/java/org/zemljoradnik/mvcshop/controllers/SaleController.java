@@ -59,7 +59,7 @@ public class SaleController {
         existingSale.setSaleDate(updatedSale.getSaleDate());
         existingSale.setQuantity(updatedSale.getQuantity());
         saleRepository.save(existingSale);
-        return "redirect:/sales";  // Nakon ažuriranja, preusmeri na stranicu sa svim prodajama
+        return "redirect:/sales";  // Nakon ažuriranja, preusmeri na stranicu sa svim prodajama pregled
     }
 
     // Dodavanje nove prodaje

@@ -34,3 +34,4 @@ public class BuyerService {
         return buyerRepository.findByName(name);
     }
 }
+//procistiti

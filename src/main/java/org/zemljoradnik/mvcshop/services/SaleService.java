@@ -37,4 +37,4 @@ public class SaleService {
         return new ArrayList<>();
         //return saleRepository.findByBuyerId(buyerId);
     }
-}
+}//procistiti

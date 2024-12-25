@@ -12,3 +12,4 @@ public interface BuyerRepository extends JpaRepository<Buyer, Long> {
 
    // void save(Buyer existingBuyer);
 }
+//prebaciti iz kontorlera
