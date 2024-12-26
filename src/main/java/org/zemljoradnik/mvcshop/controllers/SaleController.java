@@ -1,5 +1,6 @@
 package org.zemljoradnik.mvcshop.controllers;
 
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zemljoradnik.mvcshop.models.Product;
 import org.zemljoradnik.mvcshop.models.Sale;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import org.zemljoradnik.mvcshop.repositories.SaleRepository;
 import org.zemljoradnik.mvcshop.repositories.ProductRepository;
 import org.zemljoradnik.mvcshop.repositories.BuyerRepository;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @RequestMapping("/sales")
@@ -41,17 +45,41 @@ public class SaleController {
         return "edit_sale";  // JSP stranica za izmenu prodaje
     }
 
+
+
+
     // Ažuriranje podataka o prodaji
-    @PostMapping("/update")
-    public String updateSale(@ModelAttribute Sale updatedSale) {
+
+
+
+
+   @PostMapping("/update")
+    public String updateSale(@ModelAttribute Sale updatedSale, Model model) {
         Product p = productRepository.findById(updatedSale.getProduct().getId()).get();
+       if (p.getQuantity() == null) {
+           model.addAttribute("errorMessage", "Proizvod nije pronađen.");
+           return "sales";
+       }
+
         if (p.getQuantity() < updatedSale.getQuantity()) {
-            throw new RuntimeException("Invalid quantity, max: " + p.getQuantity());
+            //throw new RuntimeException("Invalid quantity, max: " + p.getQuantity());
+            model.addAttribute("errorMessage", "Nema dovoljno na stanju. Maksimalna količina: " + p.getQuantity());
+            return "sales";
         }
+
         p.setQuantity(p.getQuantity() - updatedSale.getQuantity());
         productRepository.save(p);
 
-        //  Sale existingSale = saleRepository.findById(id)
+
+
+
+
+
+
+
+
+
+    //  Sale existingSale = saleRepository.findById(id)
        //         .orElseThrow(() -> new IllegalArgumentException("Invalid sale ID:" + id));
         Sale existingSale = new Sale();
         existingSale.setProduct(updatedSale.getProduct());

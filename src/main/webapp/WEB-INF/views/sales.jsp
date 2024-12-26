@@ -41,5 +41,9 @@
             </c:forEach>
         </tbody>
     </table>
+    <div><c:if test="${not empty errorMessage}">
+             <div class="alert alert-warning">${errorMessage}</div>
+         </c:if>
+         </div>
 </body>
 </html>
